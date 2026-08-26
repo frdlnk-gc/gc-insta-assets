@@ -446,6 +446,39 @@
    "kommentare": [
     "Danke für den ersten Monat! 🌿"
    ]
+  },
+  {
+   "nr": 101,
+   "datum": "2026-08-26",
+   "zeit": "10:00",
+   "typ": "story",
+   "bilder": [
+    "https://insta.green-careers.de/2026-09-story-teaser-blumenkamp.jpg"
+   ],
+   "caption": "",
+   "kommentare": []
+  },
+  {
+   "nr": 102,
+   "datum": "2026-08-28",
+   "zeit": "18:00",
+   "typ": "story",
+   "bilder": [
+    "https://insta.green-careers.de/2026-09-story-quiz-teaser.jpg"
+   ],
+   "caption": "",
+   "kommentare": []
+  },
+  {
+   "nr": 103,
+   "datum": "2026-08-31",
+   "zeit": "11:00",
+   "typ": "story",
+   "bilder": [
+    "https://insta.green-careers.de/2026-09-story-feature-job-dm.jpg"
+   ],
+   "caption": "",
+   "kommentare": []
   }
  ]
 }
