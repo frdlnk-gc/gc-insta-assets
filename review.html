@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>GC Insta-Plan Review</title>
+<style>
+  :root{--bg:#0E1A12;--card:#152619;--ink:#F5F1E8;--dim:rgba(245,241,232,.6);--acc:#7CE0A3;--line:rgba(245,241,232,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font:15px/1.5 Poppins,system-ui,sans-serif;padding:24px 16px 60px}
+  .wrap{max-width:1100px;margin:0 auto}
+  h1{font-size:22px;margin-bottom:4px} .sub{color:var(--dim);margin-bottom:24px;font-size:13px}
+  #gate{max-width:320px;margin:20vh auto;text-align:center}
+  #gate input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;margin:12px 0}
+  #gate button{width:100%;padding:12px;border-radius:10px;border:0;background:var(--acc);color:#0E1A12;font-weight:700;font-size:15px;cursor:pointer}
+  .filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .filter button{padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--dim);cursor:pointer;font-size:13px}
+  .filter button.on{background:var(--acc);color:#0E1A12;border-color:var(--acc);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .card.done{opacity:.45}
+  .head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12.5px}
+  .head b{color:var(--acc)} .typ{text-transform:uppercase;letter-spacing:.08em;color:var(--dim);font-size:11px}
+  .media{position:relative;background:#000}
+  .media img,.media video{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+  .media.s916 img,.media.s916 video{aspect-ratio:9/16}
+  .thumbs{display:flex;gap:4px;padding:6px;overflow-x:auto;background:#0a140d}
+  .thumbs img{height:64px;border-radius:6px;flex:none}
+  .body{padding:12px 14px}
+  .cap{white-space:pre-wrap;font-size:13.5px;color:var(--ink)}
+  .kk{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);color:var(--dim);font-size:12.5px}
+  .kk span{display:block;margin-top:4px}
+  .badge{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);color:#fff;font-size:11px;padding:4px 10px;border-radius:999px}
+</style>
+</head>
+<body>
+<div id="gate">
+  <h1>🌱 GC Insta-Plan</h1>
+  <p class="sub">Passwort eingeben</p>
+  <input id="pw" type="password" placeholder="Passwort" autofocus>
+  <button onclick="check()">Öffnen</button>
+</div>
+<div class="wrap" id="app" style="display:none">
+  <h1>🌱 GreenCareers – Insta-Plan</h1>
+  <p class="sub" id="meta"></p>
+  <div class="filter" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+const PW = "gc26";
+function check(){ if(document.getElementById("pw").value === PW){ try{sessionStorage.setItem("gcrev","1")}catch(e){}; boot(); } else { document.getElementById("pw").value=""; document.getElementById("pw").placeholder="Falsch – nochmal"; } }
+document.getElementById("pw").addEventListener("keydown", e => { if(e.key==="Enter") check(); });
+try{ if(sessionStorage.getItem("gcrev")==="1") boot(); }catch(e){}
+let POSTS = [], FILTER = "alle";
+async function boot(){
+  document.getElementById("gate").style.display="none";
+  document.getElementById("app").style.display="block";
+  const p = await (await fetch("plan.json?c=" + Date.now())).json();
+  POSTS = p.posts.slice().sort((a,b) => (a.datum+a.zeit).localeCompare(b.datum+b.zeit));
+  const heute = new Date().toISOString().slice(0,10);
+  const kommend = POSTS.filter(x => x.datum >= heute).length;
+  document.getElementById("meta").textContent = POSTS.length + " geplante Einträge · " + kommend + " noch offen · Zeitraum " + POSTS[0].datum + " bis " + POSTS[POSTS.length-1].datum;
+  const typen = ["alle","bild","karussell","story","reel"];
+  document.getElementById("filters").innerHTML = typen.map(t => '<button data-t="'+t+'" class="'+(t===FILTER?"on":"")+'">'+t+'</button>').join("");
+  document.querySelectorAll(".filter button").forEach(b => b.onclick = () => { FILTER = b.dataset.t; boot2(); document.querySelectorAll(".filter button").forEach(x => x.classList.toggle("on", x.dataset.t===FILTER)); });
+  boot2();
+}
+function boot2(){
+  const heute = new Date().toISOString().slice(0,10);
+  const wd = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+  document.getElementById("grid").innerHTML = POSTS.filter(x => FILTER==="alle" || x.typ===FILTER).map(x => {
+    const d = new Date(x.datum + "T12:00:00");
+    const vorbei = x.datum < heute;
+    const s916 = (x.typ==="story"||x.typ==="reel") ? " s916" : "";
+    let media;
+    if(x.typ==="reel"){ media = '<video src="'+x.bilder[0]+'" controls muted playsinline preload="metadata"></video>'; }
+    else { media = '<img loading="lazy" src="'+x.bilder[0]+'">'; }
+    const thumbs = x.bilder.length > 1 ? '<div class="thumbs">'+x.bilder.map(b => '<img loading="lazy" src="'+b+'">').join("")+'</div>' : "";
+    const kk = x.kommentare && x.kommentare.length ? '<div class="kk">Auto-Kommentar:'+x.kommentare.map(k => "<span>💬 "+k+"</span>").join("")+'</div>' : "";
+    const cap = x.caption ? '<div class="cap">'+x.caption.replace(/</g,"&lt;")+'</div>' : '<div class="cap" style="color:var(--dim)">– Story ohne Caption –</div>';
+    return '<div class="card'+(vorbei?" done":"")+'"><div class="head"><span><b>#'+x.nr+'</b> · '+wd[d.getDay()]+' '+x.datum.slice(8,10)+"."+x.datum.slice(5,7)+'. · '+x.zeit+'</span><span class="typ">'+x.typ+(vorbei?" · raus":"")+'</span></div><div class="media'+s916+'"><span class="badge">'+(x.bilder.length>1 ? x.bilder.length+" Slides" : x.typ)+'</span>'+media+'</div>'+thumbs+'<div class="body">'+cap+kk+'</div></div>';
+  }).join("");
+}
+</script>
+</body>
+</html>
