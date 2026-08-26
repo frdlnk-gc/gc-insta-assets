@@ -7,14 +7,14 @@
 # für diesen Slot geplanten Posts auf Instagram + Facebook.
 #
 # Slots Berlin -> UTC (MESZ, gültig bis 25.10.2026):
-#   10:00->08  11:00->09  12:00->10  18:00->16  19:00->17
+#   08:00->06  10:00->08  11:00->09  12:00->10  17:00->15  18:00->16  19:00->17
 # Secrets: MAKE_TICK_HOOK = Feed-Posts (7081777), MAKE_STORY_HOOK = Stories (7101482)
 # ============================================================
 name: Insta Auto-Post Tick
 
 on:
   schedule:
-    - cron: "0 8,9,10,16,17 * * *"
+    - cron: "0 6,8,9,10,15,16,17 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -36,9 +36,11 @@ jobs:
           else
             H_UTC=$(date -u +%H)
             case "$H_UTC" in
+              06) SLOT="08:00" ;;
               08) SLOT="10:00" ;;
               09) SLOT="11:00" ;;
               10) SLOT="12:00" ;;
+              15) SLOT="17:00" ;;
               16) SLOT="18:00" ;;
               17) SLOT="19:00" ;;
               *) echo "Kein Slot für UTC-Stunde $H_UTC – Ende."; exit 0 ;;
