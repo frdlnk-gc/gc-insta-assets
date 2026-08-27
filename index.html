@@ -1,27 +1,750 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
-<title>Insta-Plan – GreenCareers</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Poppins:wght@400;500&display=swap">
-<style>body{margin:0;background:#0E1A12;color:#F5F1E8;font:400 16px Poppins,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
-.card{background:#14231A;border:1px solid #24382B;border-radius:16px;padding:36px 32px;max-width:360px;width:calc(100%-48px);text-align:center}
-h1{font-family:Fraunces,serif;font-size:26px;margin:0 0 6px} p{color:#9DB0A2;font-size:14px;margin:0 0 20px}
-input{width:100%;box-sizing:border-box;background:#0E1A12;border:1px solid #24382B;border-radius:10px;color:#F5F1E8;font:400 18px Poppins;padding:13px 14px;text-align:center}
-button{width:100%;margin-top:12px;background:#16A34A;border:none;border-radius:10px;color:#fff;font:500 16px Poppins;padding:13px;cursor:pointer}
-.err{color:#ff9d9d;font-size:13px;height:18px;margin-top:10px}</style></head><body>
-<div class="card"><h1>🌿 Insta-Plan</h1><p>GreenCareers – interner Bereich</p>
-<form id="f"><input id="pw" type="password" placeholder="Passwort" autofocus autocomplete="current-password">
-<button>Ansehen</button><div class="err" id="err"></div></form></div>
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@greencareers.de &middot; Monatsplan</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --o:#16A34A; --glow:#4ADE80; --deep:#0F1712; --ink:#14201A;
+  --light:#F6F5F2; --muted:#8A9099; --line:rgba(246,245,242,.13); }
+* { margin:0; padding:0; box-sizing:border-box }
+body { background:var(--deep); color:var(--light); font-family:Barlow,sans-serif;
+  line-height:1.5; -webkit-font-smoothing:antialiased }
+#gate { position:fixed; inset:0; background:var(--deep); display:grid; place-items:center; z-index:99 }
+#gate form { display:flex; flex-direction:column; gap:14px; width:280px; text-align:center }
+#gate input { padding:14px; border-radius:12px; border:1px solid var(--line);
+  background:rgba(246,245,242,.06); color:var(--light); font-size:16px; text-align:center }
+#gate button { padding:14px; border:0; border-radius:12px; background:var(--o); color:#fff;
+  font:700 16px Fraunces, Georgia, serif; cursor:pointer }
+.wrap { max-width:1000px; margin:0 auto; padding:44px 20px 90px }
+h1 { font-family:Fraunces, Georgia, serif; font-weight:700; font-size:32px; letter-spacing:-1.1px }
+.meta { color:var(--muted); font-size:15px; margin-top:6px }
+h2 { font-family:Fraunces, Georgia, serif; font-weight:700; font-size:21px; margin:48px 0 6px;
+  letter-spacing:-.5px; display:flex; align-items:center; gap:10px }
+.zahl { font:600 13px Barlow,sans-serif; background:var(--o); color:#fff;
+  padding:2px 9px; border-radius:99px; letter-spacing:0 }
+.hint { color:var(--muted); font-size:14px; margin-bottom:16px; max-width:60ch }
+.feed { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; max-width:430px }
+.g { position:relative; aspect-ratio:4/5; background-size:cover; background-position:center;
+  border-radius:3px; text-decoration:none }
+.gn { position:absolute; left:6px; bottom:5px; font:700 12px Fraunces, Georgia, serif; color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,.8) }
+.gk { position:absolute; right:6px; top:4px; color:#fff; font-size:14px;
+  text-shadow:0 1px 4px rgba(0,0,0,.8) }
+.karte { display:grid; grid-template-columns:300px 1fr; gap:26px; padding:24px 0;
+  border-top:1px solid var(--line) }
+.bilder { display:flex; gap:6px; overflow-x:auto; padding-bottom:6px }
+.bilder img { width:300px; flex:none; border-radius:10px; display:block }
+.karte.reel video { width:270px; border-radius:12px; display:block; background:#000 }
+.kopf { display:flex; flex-wrap:wrap; gap:12px; align-items:baseline; margin-bottom:12px }
+.nr { font:700 20px Fraunces, Georgia, serif; color:var(--glow) }
+.datum { font-weight:600 }
+.typ { color:var(--muted); font-size:14px }
+.caption { font-family:Barlow,sans-serif; font-size:15px; white-space:pre-wrap;
+  background:rgba(246,245,242,.05); border:1px solid var(--line); border-radius:12px;
+  padding:16px }
+.komm { margin-top:14px; font-size:14px }
+.komm b { color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase;
+  letter-spacing:.4px }
+.komm ol { margin:8px 0 0 20px }
+.komm li { margin-bottom:5px }
+.storys { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px }
+.story { display:flex; flex-direction:column; gap:8px }
+.story img { width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:10px;
+  border:1px solid var(--line); display:block }
+.story figcaption { font-size:12.5px; color:var(--muted); display:flex; gap:8px }
+.story figcaption b { color:var(--glow) }
+@media (max-width:760px) {
+  .karte { grid-template-columns:1fr }
+  .bilder img { width:240px }
+  .karte.reel video { width:100% }
+}
+</style></head><body>
+
+<div id="gate"><form onsubmit="pruefe(event)">
+  <div style="font:700 22px Fraunces, Georgia, serif">@greencareers.de</div>
+  <input type="password" id="pw" placeholder="Passwort" autofocus>
+  <button>Plan ansehen</button>
+</form></div>
+
+<div class="wrap" id="inhalt" style="display:none">
+  <h1>@greencareers.de &middot; Monatsplan</h1>
+  <p class="meta">33 Posts &middot; 16 Stories &middot;
+     3 Reels &middot; 2026-08-25 bis
+     2026-09-27</p>
+  
+  <h2>Feed-Vorschau <span class="zahl">33</span></h2>
+  <p class="hint">So sieht das Profil-Raster später aus. Stories und Reels
+     tauchen hier nicht auf &ndash; die stehen weiter unten.</p>
+  <div class="feed"><a class="g" href="#p33" style="background-image:url(2026-09-w3-mo-insight-beschaeftigte.jpg)"><span class="gn">33</span></a><a class="g" href="#p32" style="background-image:url(2026-09-v3-quiz-beschaeftigte.jpg)"><span class="gn">32</span></a><a class="g" href="#p31" style="background-image:url(2026-09-w3-mi-bewerber-probetag.jpg)"><span class="gn">31</span></a><a class="g" href="#p30" style="background-image:url(2026-09-w4-do-inhaber-pflanzsaison.jpg)"><span class="gn">30</span></a><a class="g" href="#p29" style="background-image:url(2026-09-w4-mi-bewerber-k-s1.jpg)"><span class="gn">29</span><span class=gk>&#10063;</span></a><a class="g" href="#p28" style="background-image:url(2026-09-w2-di-erfolg-gruenkonzept.jpg)"><span class="gn">28</span></a><a class="g" href="#p27" style="background-image:url(2026-09-w4-mo-insight-umsatz.jpg)"><span class="gn">27</span></a><a class="g" href="#p26" style="background-image:url(2026-09-v3-engagement-regen.jpg)"><span class="gn">26</span></a><a class="g" href="#p25" style="background-image:url(2026-09-v3-quiz-umsatz.jpg)"><span class="gn">25</span></a><a class="g" href="#p24" style="background-image:url(2026-09-v3-karte-messefinale.jpg)"><span class="gn">24</span></a><a class="g" href="#p23" style="background-image:url(2026-09-v2-klima-jobs.jpg)"><span class="gn">23</span></a><a class="g" href="#p22" style="background-image:url(2026-09-v2-chart-tariflohn.jpg)"><span class="gn">22</span></a><a class="g" href="#p21" style="background-image:url(2026-09-w3-di-erfolg-k-cover.jpg)"><span class="gn">21</span><span class=gk>&#10063;</span></a><a class="g" href="#p20" style="background-image:url(2026-09-v2-news-messe.jpg)"><span class="gn">20</span></a><a class="g" href="#p19" style="background-image:url(2026-09-v3-karte-montag.jpg)"><span class="gn">19</span></a><a class="g" href="#p18" style="background-image:url(2026-09-v3-quiz-messe.jpg)"><span class="gn">18</span></a><a class="g" href="#p17" style="background-image:url(2026-09-w2-fr-brand.jpg)"><span class="gn">17</span></a><a class="g" href="#p16" style="background-image:url(2026-09-w2-do-inhaber-vorlauf.jpg)"><span class="gn">16</span></a><a class="g" href="#p15" style="background-image:url(2026-09-w2-mi-bewerber-k-s1.jpg)"><span class="gn">15</span><span class=gk>&#10063;</span></a><a class="g" href="#p14" style="background-image:url(2026-09-w1-fr-erfolg-astwerk.jpg)"><span class="gn">14</span></a><a class="g" href="#p13" style="background-image:url(2026-09-w2-mo-insight-azubis.jpg)"><span class="gn">13</span></a><a class="g" href="#p12" style="background-image:url(2026-09-v4-chef-frage.jpg)"><span class="gn">12</span></a><a class="g" href="#p11" style="background-image:url(2026-09-v3-quiz-azubis.jpg)"><span class="gn">11</span></a><a class="g" href="#p10" style="background-image:url(2026-09-v2-engagement-team.jpg)"><span class="gn">10</span></a><a class="g" href="#p9" style="background-image:url(2026-09-w1-do-inhaber-k-s1.jpg)"><span class="gn">9</span><span class=gk>&#10063;</span></a><a class="g" href="#p8" style="background-image:url(2026-09-w1-mi-bewerber-diskret.jpg)"><span class="gn">8</span></a><a class="g" href="#p7" style="background-image:url(2026-09-w1-di-erfolg-diederich-45.jpg)"><span class="gn">7</span></a><a class="g" href="#p6" style="background-image:url(2026-09-v2-chart-gehaltsangabe.jpg)"><span class="gn">6</span></a><a class="g" href="#p5" style="background-image:url(2026-09-v3-fun-sonntag.jpg)"><span class="gn">5</span></a><a class="g" href="#p4" style="background-image:url(2026-09-v3-quiz-gehalt.jpg)"><span class="gn">4</span></a><a class="g" href="#p3" style="background-image:url(2026-09-v3-fun-feierabend.jpg)"><span class="gn">3</span></a><a class="g" href="#p2" style="background-image:url(2026-09-v3-alltag-morgen.jpg)"><span class="gn">2</span></a><a class="g" href="#p1" style="background-image:url(2026-09-w4-di-erfolg-blumenkamp.jpg)"><span class="gn">1</span></a></div>
+
+  <h2>Posts <span class="zahl">33</span></h2>
+  
+<article class="karte" id="p1">
+  <div class="bilder"><img src="2026-09-w4-di-erfolg-blumenkamp.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#1</span>
+      <span class="datum">Mi 26.08.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Ein Landschaftsgärtner mehr bei Gartenservice Blumenkamp.
+
+Der Job dahinter ist der, den die meisten meinen, wenn sie GaLaBau sagen: Boden abtragen, Frostschutzschicht einbauen, verdichten, Pflaster setzen – und dabei die zwei Prozent Gefälle treffen, die später darüber entscheiden, ob das Wasser abläuft oder auf der Terrasse steht.
+
+Drei Jahre Ausbildung. Danach kannst du dir in dieser Branche aussuchen, wo du arbeitest: 19.898 Betriebe, 131.746 Beschäftigte – so viele wie nie.
+
+Guten Start. 🌱
+
+Quelle: BGL-Branchenstatistik 2025
+green-careers.de
+
+#galabau #landschaftsgärtner #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer soll hier als Nächstes stehen? 😉</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p2">
+  <div class="bilder"><img src="2026-09-v3-alltag-morgen.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#2</span>
+      <span class="datum">Do 27.08.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">6:30 Uhr, Baustelle.
+
+Nebel liegt noch über der Fläche, die Straßen waren leer, der Kaffee kommt aus der Thermoskanne. Eine Stunde später ist der Aufbau fertig und der Rest des Landes fährt gerade den Rechner hoch.
+
+Im Sommer ist das der beste Deal, den der Beruf zu bieten hat: früh anfangen, die kühlen Stunden mitnehmen, um halb vier Feierabend.
+
+Im Januar um 6:30 sieht die Sache anders aus. 🙃
+
+#galabau #baustellenleben #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Und was gibt&#x27;s bei euch morgens auf der Baustelle? 🥨</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p3">
+  <div class="bilder"><img src="2026-09-v3-fun-feierabend.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#3</span>
+      <span class="datum">Fr 28.08.2026 · 12:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Freitag, kurz nach vier. Schaufeln abgespritzt, Rüttelplatte auf den Hänger, Ladung gezurrt.
+
+Das Beste an dem Beruf ist immer noch, dass man abends sieht, was man gemacht hat. Ein Bürotag hinterlässt einen Posteingang – ein Tag auf der Baustelle eine Fläche, die vorher nicht da war.
+
+Schönes Wochenende. 🌿
+
+#freitag #galabau #feierabend</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Was steht bei euch an – Grillen, Garten oder Sofa?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p4">
+  <div class="bilder"><img src="2026-09-v3-quiz-gehalt.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#4</span>
+      <span class="datum">Sa 29.08.2026 · 10:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Nur wenige Stellenanzeigen in Deutschland nennen ein Gehalt. Wie wenige – A, B oder C?
+
+Die Zahl stammt aus einer Auswertung von Stepstone, und sie ist niedriger als das, was die meisten tippen. Auffällig ist vor allem: Genau die Angabe, die Bewerber zuerst suchen, fehlt am häufigsten.
+
+Tipp in die Kommentare, Auflösung am Montag.
+
+#quiz #galabau #recruiting</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Kleiner Tipp: Es ist weniger, als man hofft. 👀</li><li>Wer richtig tippt, bekommt am Montag ein 🌿 von uns.</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p5">
+  <div class="bilder"><img src="2026-09-v3-fun-sonntag.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#5</span>
+      <span class="datum">So 30.08.2026 · 11:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Sonntag. Der einzige Tag, an dem der Wecker aus bleibt.
+
+Und der einzige Tag, an dem man den eigenen Garten sieht statt fremde. Der sieht bei den meisten hier deutlich schlechter aus als alles, was sie unter der Woche bauen. 😄
+
+Schönen Sonntag.
+
+#sonntag #galabau #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Erst Kaffee, dann erstmal gar nichts. Wer macht&#x27;s genauso? ☕</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p6">
+  <div class="bilder"><img src="2026-09-v2-chart-gehaltsangabe.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#6</span>
+      <span class="datum">Mo 31.08.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Auflösung: A – 15,6 Prozent.
+
+So viele Stellenanzeigen in Deutschland nennen ein Gehalt. Knapp jede sechste. In allen anderen steht „leistungsgerechte Vergütung“, und der Bewerber soll raten.
+
+Rechtlich dreht sich das gerade: Die EU-Frist zur Umsetzung der Entgelttransparenzrichtlinie ist im Juni abgelaufen, das deutsche Gesetz ist in Arbeit. Die Angabe kommt also so oder so – die Frage ist nur, ob ein Betrieb sie freiwillig macht oder später muss.
+
+Praktisch gesehen: Wer eine Zahl reinschreibt, sortiert die Leute vorher aus, die zu dem Lohn ohnehin nicht gekommen wären. Das spart beiden Seiten den Termin.
+
+Quelle: Stepstone 2026 · EU-Richtlinie 2023/970
+green-careers.de
+
+#recruiting #gehalt #galabau</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wie steht ihr dazu – Gehalt in die Anzeige, ja oder nein?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p7">
+  <div class="bilder"><img src="2026-09-w1-di-erfolg-diederich-45.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#7</span>
+      <span class="datum">Di 01.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Drei neue Leute bei Baumschule &amp; Gartenbau Ingo Diederich in Buxtehude (21614): zwei Vorarbeiter und ein Facharbeiter.
+
+Vorarbeiter ist dabei die Position, die am schwersten zu besetzen ist. Der Job ist eine Doppelrolle: morgens die Kolonne einteilen, Material und Maschinen disponieren, mit dem Kunden reden, wenn etwas anders kommt als geplant – und zwischendurch selbst mit anpacken. Wer das kann, hat meistens schon einen Job. Deshalb dauert die Suche.
+
+Guten Start, euch dreien. 🌱
+
+green-careers.de
+
+#baumschule #gartenbau #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Buxtehude-Ecke: Wer kennt den Betrieb? 🌱</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p8">
+  <div class="bilder"><img src="2026-09-w1-mi-bewerber-diskret.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#8</span>
+      <span class="datum">Mi 02.09.2026 · 12:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">„Kriegt mein Chef das mit, wenn ich mich umschaue?“
+
+Das ist mit Abstand die häufigste Frage, die hier ankommt – und der Grund, warum viele gar nicht erst anfangen zu suchen. In einem überschaubaren Gewerbe kennt sich die halbe Region, und eine Bewerbung, die die Runde macht, macht den Arbeitsalltag ungemütlich.
+
+Deshalb läuft es bei uns andersherum. Du legst ein Profil an, ohne dich irgendwo zu bewerben. Betriebe sehen es erst, wenn du es freigibst. Kein Anschreiben, kein Lebenslauf-Upload, keine Bewerbung, die irgendwo liegt.
+
+Kostenlos, und du kannst jederzeit wieder rausgehen.
+
+green-careers.de
+
+#galabau #jobwechsel #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Fragen zur Diskretion? Stell sie hier oder per DM – wir antworten ehrlich.</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p9">
+  <div class="bilder"><img src="2026-09-w1-do-inhaber-k-s1.jpg" loading="lazy" alt="Slide 1"><img src="2026-09-v2-anzeige-k-s2.jpg" loading="lazy" alt="Slide 2"><img src="2026-09-v2-anzeige-k-s3.jpg" loading="lazy" alt="Slide 3"><img src="2026-09-v2-anzeige-k-s4.jpg" loading="lazy" alt="Slide 4"><img src="2026-09-v2-anzeige-k-s5.jpg" loading="lazy" alt="Slide 5"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#9</span>
+      <span class="datum">Do 03.09.2026 · 18:00 Uhr</span><span class="typ">Karussell &middot; 5 Slides</span></div>
+    <pre class="caption">Keine Bewerbungen auf Ihre Anzeige? Meistens liegt es an einem von drei Punkten.
+
+Erstens am fehlenden Gehalt: 15,6 Prozent der Anzeigen in Deutschland nennen eines – wer dazugehört, fällt auf. Zweitens am Bewerbungsweg: Wer nach Anschreiben und Lebenslauf-PDF fragt, verliert die Leute, die abends um halb neun auf dem Sofa mit dem Handy schauen. Drittens am Bildmaterial: Ein Stockfoto mit sauberem Poloshirt erkennt jeder Landschaftsgärtner in einer halben Sekunde als das, was es ist.
+
+Alle drei sind an einem Nachmittag zu ändern.
+
+Die Details im Karussell. →
+
+Quelle: Stepstone 2026
+green-careers.de
+
+#galabau #recruiting #stellenanzeige</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Welche der drei Stellschrauben setzen Sie schon um?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p10">
+  <div class="bilder"><img src="2026-09-v2-engagement-team.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#10</span>
+      <span class="datum">Fr 04.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Team 6-Uhr-Start oder Team Ausschlafen?
+
+Im Sommer sprechen die kühlen Stunden klar für den frühen Anfang – und Feierabend, bevor es richtig heiß wird. Dagegen steht der Anfahrtsweg: Wer um sechs auf der Baustelle stehen soll und 40 Minuten fährt, klingelt um kurz nach halb fünf.
+
+Jede Kolonne löst das anders. Wie läuft es bei euch?
+
+#galabau #baustellenleben #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wir fangen an: Team 6-Uhr-Start. 🙋</li><li>Ehrenrunde für alle, die schon um 5 aufstehen. 🫡</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p11">
+  <div class="bilder"><img src="2026-09-v3-quiz-azubis.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#11</span>
+      <span class="datum">Sa 05.09.2026 · 10:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Wie viele junge Leute haben zuletzt eine Ausbildung im GaLaBau begonnen – A, B oder C?
+
+Die Ausbildung dauert drei Jahre, heißt offiziell Gärtner Fachrichtung Garten- und Landschaftsbau, und die Zahl der Neuverträge sagt ziemlich genau voraus, wie eng der Markt in drei Jahren wird.
+
+Tipp in die Kommentare. Auflösung am Montag.
+
+#quiz #galabau #ausbildung</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Auflösung am Montag – mit Zahlen, die selbst alte Hasen überraschen.</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p12">
+  <div class="bilder"><img src="2026-09-v4-chef-frage.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#12</span>
+      <span class="datum">So 06.09.2026 · 11:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Woran erkennt man einen guten Chef?
+
+Nicht am Firmenwagen. Eher daran, was passiert, wenn der Kunde meckert, obwohl die Kolonne alles richtig gemacht hat – ob er sich vorstellt oder wegduckt.
+
+Und daran, ob Überstunden aufgeschrieben werden oder verschwinden.
+
+Was ist für dich der Punkt, an dem du merkst: Der ist in Ordnung?
+
+#galabau #baustellenleben #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wir fangen an: Ein guter Chef sagt auch mal Danke.</li><li>Und: Er steht vor der Kolonne, wenn der Kunde meckert – nicht hinter ihr.</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p13">
+  <div class="bilder"><img src="2026-09-w2-mo-insight-azubis.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#13</span>
+      <span class="datum">Mo 07.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Auflösung: B – 8.089 neue Azubis.
+
+Klingt erst mal ordentlich. Die Einordnung macht daraus eine andere Geschichte: 19.898 Betriebe stehen diesen 8.089 Anfängern gegenüber. Rechnerisch bekommt nicht mal jeder zweite Betrieb einen Azubi ab. Und bis der erste davon ausgelernt ist, vergehen drei Jahre.
+
+Was das für dich heißt, wenn du heute schon ausgelernt bist: Du bist genau das, worum sich gerade 19.898 Betriebe bemühen. Das ist eine Verhandlungsposition, und die meisten nutzen sie nicht.
+
+Quelle: BGL-Branchenstatistik 2025
+green-careers.de
+
+#galabau #ausbildung #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer bildet selbst aus? Erzählt mal – wie findet ihr eure Azubis?</li><li>Zur Einordnung: 19.898 Betriebe zählt die Branche – und gefühlt suchen gerade alle. (BGL 2025)</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p14">
+  <div class="bilder"><img src="2026-09-w1-fr-erfolg-astwerk.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#14</span>
+      <span class="datum">Di 08.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Zwei Baumpfleger mehr bei der Astwerk Niels Beyer GmbH.
+
+Falls jemand denkt, das sei Gärtnern mit Leiter: Baumpflege ist ein eigener Beruf mit eigener Ausbildung. Die Leute arbeiten in der Krone, im Seil, gesichert nach Seilklettertechnik – SKT-A für den Aufstieg, SKT-B dafür, einen Kollegen aus dem Baum zu holen, wenn etwas passiert. Dazu Totholz raus, Kronensicherung einbauen, Schnitt nach ZTV-Baumpflege, und unten steht einer an der Absperrung, der im Ernstfall hochgeht.
+
+Genau deshalb sind gute Baumpfleger so schwer zu finden: Die Kletterscheine kosten Zeit und Geld, die Verantwortung ist hoch – und Höhenangst kann man nicht wegtrainieren.
+
+Guten Start, ihr zwei. 🌳
+
+green-careers.de
+
+#baumpflege #seilklettertechnik #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Baumpfleger hier? Zeigt euch in den Kommentaren. 🌳</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p15">
+  <div class="bilder"><img src="2026-09-w2-mi-bewerber-k-s1.jpg" loading="lazy" alt="Slide 1"><img src="2026-09-w2-mi-bewerber-k-s2.jpg" loading="lazy" alt="Slide 2"><img src="2026-09-w2-mi-bewerber-k-s3.jpg" loading="lazy" alt="Slide 3"><img src="2026-09-w2-mi-bewerber-k-s4.jpg" loading="lazy" alt="Slide 4"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#15</span>
+      <span class="datum">Mi 09.09.2026 · 12:00 Uhr</span><span class="typ">Karussell &middot; 4 Slides</span></div>
+    <pre class="caption">So läuft ein Wechsel hier ab – in drei Schritten.
+
+Du sagst einmal, was du kannst, wo du wohnst und wie weit du fahren willst. Betriebe aus deiner Umgebung melden sich bei dir. Du entscheidest, mit wem du redest.
+
+Kein Anschreiben, kein Bewerbungsfoto, keine Absage nach vier Wochen Schweigen. Über 30.000 Leute aus der grünen Branche machen es inzwischen so.
+
+Der Umkreis ist übrigens der Punkt, den die meisten unterschätzen: Anfahrt ist bei Kolonnenstart um sechs der häufigste Grund, warum ein guter Job am Ende doch nicht passt.
+
+Die drei Schritte im Karussell. →
+
+green-careers.de
+
+#galabau #grünejobs #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Fragen zum Ablauf? Hier oder per DM – wir antworten schnell.</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p16">
+  <div class="bilder"><img src="2026-09-w2-do-inhaber-vorlauf.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#16</span>
+      <span class="datum">Do 10.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Vier bis sechs Monate Auftragsvorlauf – so voll sind die Bücher im GaLaBau gerade.
+
+Von außen klingt das nach einem Luxusproblem. Von innen heißt es: Aufträge absagen, weil die Kolonne fehlt, um sie abzuarbeiten. Die Branche ist zuletzt auf 11,11 Milliarden Euro Umsatz gewachsen, plus 4,3 Prozent – Wachstum scheitert hier praktisch nie an der Nachfrage.
+
+Es scheitert an einem Polier, einem Vorarbeiter, einem Baugewerbe-Facharbeiter, den man nicht findet.
+
+Quelle: BGL-Branchenstatistik 2025
+green-careers.de
+
+#galabau #fachkräftemangel #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wie voll sind Ihre Bücher gerade – ehrlich?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p17">
+  <div class="bilder"><img src="2026-09-w2-fr-brand.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#17</span>
+      <span class="datum">Fr 11.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Kurz mal, wer hier eigentlich schreibt.
+
+Wir sind kein Stellenportal. Ein Portal wartet darauf, dass sich jemand bewirbt – und schickt dann Absagen. Bei uns legst du ein Profil an, und die Betriebe aus deiner Region melden sich bei dir. Ohne Anschreiben und ohne dass dein jetziger Chef etwas mitbekommt.
+
+Über 900 Stellen sind so bereits besetzt worden: GaLaBau, Baumschule, Baumpflege, Landwirtschaft.
+
+Dahinter steckt ein kleines Team, das die Branche kennt – und das dir hier lieber Zahlen und Handwerk zeigt als Sprüche.
+
+Schön, dass du da bist. 🌿
+
+green-careers.de
+
+#greencareers #grünebranche #galabau</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Seit wann folgt ihr uns? Alte Hasen und Neue – meldet euch! 🌿</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p18">
+  <div class="bilder"><img src="2026-09-v3-quiz-messe.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#18</span>
+      <span class="datum">Sa 12.09.2026 · 10:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">In welcher Stadt findet nächste Woche die GaLaBau statt – A, B oder C?
+
+Die Leitmesse der Branche läuft nur alle zwei Jahre. Wer schon mal da war, weiß: Man läuft an einem Tag nicht durch.
+
+Tipp in die Kommentare, Auflösung am Montag.
+
+#quiz #galabau #messe</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer von euch fährt hin? 🙋</li><li>Auflösung am Montag – dann startet die Messe-Woche. 🌿</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p19">
+  <div class="bilder"><img src="2026-09-v3-karte-montag.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#19</span>
+      <span class="datum">So 13.09.2026 · 19:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Morgen wieder Montag.
+
+Der Montag ist übrigens selten das eigentliche Problem. Wenn der Betrieb passt, ist er einfach der Tag, an dem es weitergeht. Wenn nicht, fängt das ungute Gefühl schon am Sonntagabend an – und das ist dann kein Montagsblues, sondern ein Hinweis.
+
+green-careers.de
+
+#montag #jobwechsel #grünebranche</pre>
+  </div>
+</article>
+<article class="karte" id="p20">
+  <div class="bilder"><img src="2026-09-v2-news-messe.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#20</span>
+      <span class="datum">Mo 14.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Auflösung: B – Nürnberg.
+
+Die GaLaBau 2026 läuft diese Woche, 15. bis 18. September. Drei Themen stehen im Mittelpunkt: Klimaanpassung, neue Technik und die Frage, wie Betriebe Leute finden und halten.
+
+Wer hinfährt und ehrlich Zeit sparen will: Die Maschinenhallen kosten am meisten davon, und man unterschätzt regelmäßig, wie lang die Wege sind.
+
+Quelle: GaLaBau-Messe Nürnberg, Trendbarometer 2026
+green-careers.de
+
+#galabau2026 #nürnberg #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Ehrliche Messe-Tipps gesucht: Welche Halle lohnt sich wirklich?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p21">
+  <div class="bilder"><img src="2026-09-w3-di-erfolg-k-cover.jpg" loading="lazy" alt="Slide 1"><img src="2026-09-w3-di-erfolg-k-s2.jpg" loading="lazy" alt="Slide 2"><img src="2026-09-w3-di-erfolg-k-s3.jpg" loading="lazy" alt="Slide 3"><img src="2026-09-w3-di-erfolg-k-s4.jpg" loading="lazy" alt="Slide 4"><img src="2026-09-w3-di-erfolg-k-s5.jpg" loading="lazy" alt="Slide 5"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#21</span>
+      <span class="datum">Di 15.09.2026 · 18:00 Uhr</span><span class="typ">Karussell &middot; 5 Slides</span></div>
+    <pre class="caption">Drei Betriebe, die im Netzwerk fündig geworden sind.
+
+Vom Landschaftsgärtner über den Vorarbeiter bis zum LKW-Fahrer mit C/CE – letzterer ist so ein Fall, den man leicht übersieht: Ohne jemanden, der die Maschinen und die Ballenware zur Baustelle bringt, steht die beste Kolonne morgens im Hof.
+
+Die drei im Karussell. →
+
+green-careers.de
+
+#galabau #grünebranche #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Glückwünsche an die drei Teams gern hier lassen. 👇</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p22">
+  <div class="bilder"><img src="2026-09-v2-chart-tariflohn.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#22</span>
+      <span class="datum">Mi 16.09.2026 · 12:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">20,91 Euro die Stunde.
+
+So viel sieht der Tarif seit Juli für ausgelernte Landschaftsgärtner vor – Lohngruppe 4.2a, Tarifgebiet West. Bei 173 Stunden im Monat sind das rund 3.617 Euro brutto in Vollzeit.
+
+Warum das wichtig ist, auch wenn dein Betrieb nicht tarifgebunden ist: Es ist die einzige Zahl, gegen die du dein eigenes Gehalt sauber prüfen kannst. Alles andere ist Hörensagen vom Parkplatz.
+
+Rechne einmal nach. Viele hier waren überrascht – in beide Richtungen.
+
+Quelle: Tarifabschluss GaLaBau (BGL/IG BAU), Lohngruppe 4.2a West
+green-careers.de
+
+#landschaftsgärtner #gehalt #galabau</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Kleine anonyme Umfrage: 👍 = Tarif oder mehr · ❤️ = drunter</li><li>Zur Einordnung: 20,91 € × 173 Stunden sind rund 3.617 € brutto im Monat (Vollzeit).</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p23">
+  <div class="bilder"><img src="2026-09-v2-klima-jobs.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#23</span>
+      <span class="datum">Do 17.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Entsiegeln, begrünen, Regenwasser halten – das ist gerade das größte Wachstumsthema der Branche.
+
+Dachbegrünung, Versickerungsmulden, Baumrigolen, aufgebrochene Parkplätze: Was in den Städten unter Klimaanpassung läuft, ist am Ende Tiefbau plus Vegetationstechnik. Gebaut wird es von Landschaftsgärtnern.
+
+Der Unterschied zum üblichen Zukunftsgerede: Diese Aufträge kommen von Kommunen, sind gefördert und laufen über Jahre. Das ist keine Prognose, das steht in den Auftragsbüchern.
+
+green-careers.de
+
+#klimaanpassung #galabau #zukunftsjobs</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer arbeitet schon an Dachbegrünung oder Entsiegelung? Erzählt mal!</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p24">
+  <div class="bilder"><img src="2026-09-v3-karte-messefinale.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#24</span>
+      <span class="datum">Fr 18.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Letzter Messetag in Nürnberg. Wer war da?
+
+Was hat sich gelohnt – die neuen Maschinen, die Klimathemen, oder war es am Ende doch der Austausch am Stand mit Leuten, die dieselben Probleme haben?
+
+#galabau2026 #nürnberg #grünebranche</pre>
+  </div>
+</article>
+<article class="karte" id="p25">
+  <div class="bilder"><img src="2026-09-v3-quiz-umsatz.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#25</span>
+      <span class="datum">Sa 19.09.2026 · 10:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Wie viel Umsatz macht der GaLaBau in Deutschland pro Jahr – A, B oder C?
+
+Zur Orientierung: In der Branche arbeiten 131.746 Menschen in 19.898 Betrieben. Der Rest ist Kopfrechnen.
+
+Tipp in die Kommentare. Auflösung am Montag.
+
+#quiz #galabau #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Auflösung am Montag. Kleiner Tipp: mehr als die meisten denken. 👀</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p26">
+  <div class="bilder"><img src="2026-09-v3-engagement-regen.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#26</span>
+      <span class="datum">So 20.09.2026 · 11:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Team Regenjacke oder Team Durchziehen?
+
+Der Herbst meldet sich, und damit die Diskussion, die jede Kolonne kennt. Interessant ist ja: Bei Pflasterarbeiten entscheidet der Regen häufig mit, ob überhaupt weitergemacht werden kann – aufgeweichter Unterbau verzeiht nichts. Beim Pflanzen ist er dagegen eher willkommen.
+
+Ab wann ist bei euch Schluss mit draußen?
+
+#galabau #baustellenleben #herbst</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Ehrlich: Ab wann ist bei euch Schluss mit draußen? 🌧️</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p27">
+  <div class="bilder"><img src="2026-09-w4-mo-insight-umsatz.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#27</span>
+      <span class="datum">Mo 21.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Auflösung: C – 11,11 Milliarden Euro.
+
+Plus 4,3 Prozent zum Vorjahr. Der GaLaBau wächst weiter, quer durch alle Regionen, bei 131.746 Beschäftigten – Rekordstand.
+
+Die Zahl, die daneben interessanter ist: vier bis sechs Monate Auftragsvorlauf. Die Betriebe haben also nicht zu wenig Arbeit, sondern zu wenig Leute. Genau das ist die Ausgangslage, wenn du gerade überlegst zu wechseln.
+
+Quelle: BGL-Branchenstatistik 2025
+green-careers.de
+
+#galabau #grünebranche #greencareers</pre>
+  </div>
+</article>
+<article class="karte" id="p28">
+  <div class="bilder"><img src="2026-09-w2-di-erfolg-gruenkonzept.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#28</span>
+      <span class="datum">Di 22.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Zwei Landschaftsgärtner mehr bei Grünkonzept GaLaBau 360°.
+
+Zwei auf einmal ist der Fall, den Betriebe am liebsten haben und am seltensten hinbekommen – weil eine Kolonne erst dann wirklich mehr schafft, wenn sie vollständig ist. Einer allein wird oft nur zwischen den Baustellen hin- und hergeschoben.
+
+Guten Start, euch beiden. 🌱
+
+green-careers.de
+
+#galabau #landschaftsgärtner #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Doppelte Verstärkung – Glückwünsche gern hier lassen! 👇</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p29">
+  <div class="bilder"><img src="2026-09-w4-mi-bewerber-k-s1.jpg" loading="lazy" alt="Slide 1"><img src="2026-09-w4-mi-bewerber-k-s2.jpg" loading="lazy" alt="Slide 2"><img src="2026-09-w4-mi-bewerber-k-s3.jpg" loading="lazy" alt="Slide 3"><img src="2026-09-w4-mi-bewerber-k-s4.jpg" loading="lazy" alt="Slide 4"><img src="2026-09-w4-mi-bewerber-k-s5.jpg" loading="lazy" alt="Slide 5"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#29</span>
+      <span class="datum">Mi 23.09.2026 · 12:00 Uhr</span><span class="typ">Karussell &middot; 5 Slides</span></div>
+    <pre class="caption">Drei Dinge, auf die Betriebe in deinem Profil zuerst schauen.
+
+Was du gemacht hast – also Pflaster, Pflege, Baumpflege, Maschinen, nicht „Tätigkeiten im Gartenbau“. Wie weit du fährst. Und ab wann du kannst.
+
+Diese drei Angaben entscheiden praktisch allein darüber, ob sich jemand meldet. Der Rest – Formulierungen, Foto, Lebenslauf-Design – spielt hier keine Rolle. Dafür gibt es das Feld gar nicht.
+
+Details im Karussell. →
+
+green-careers.de
+
+#galabau #grünejobs #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Punkt 1 ist der wichtigste – und der ehrlichste. Fragen dazu? 👇</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p30">
+  <div class="bilder"><img src="2026-09-w4-do-inhaber-pflanzsaison.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#30</span>
+      <span class="datum">Do 24.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Oktober ist Pflanzsaison – und damit die Zeit, in der jede Hand zählt.
+
+Ballenware will in den Boden, solange der Boden noch warm ist und noch nicht friert. Das Fenster ist kurz, und es verschiebt sich nicht, nur weil zwei Leute fehlen.
+
+Wer jetzt merkt, dass das Team zu dünn ist, sollte nicht bis zum Frühjahr warten: Im Herbst sind deutlich mehr Fachkräfte wechselbereit als im Frühjahr, wenn alle im Saisonstress stecken.
+
+green-careers.de
+
+#galabau #pflanzsaison #recruiting</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wie sieht Ihre Oktober-Planung aus – Team komplett?</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p31">
+  <div class="bilder"><img src="2026-09-w3-mi-bewerber-probetag.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#31</span>
+      <span class="datum">Fr 25.09.2026 · 18:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Ein Probetag sagt mehr als drei Vorstellungsgespräche.
+
+Du siehst in acht Stunden, was du im Gespräch nie erfährst: wie der Ton in der Kolonne ist, ob die Maschinen gepflegt sind, ob pünktlich Feierabend ist oder ob „wir machen das noch fertig“ hier jeden Tag heißt.
+
+Und der Betrieb sieht, ob du eine Rüttelplatte bedienen kannst, ohne dass es jemand erklären muss.
+
+Wer seinen Job über einen Probetag gefunden hat: Wie war’s?
+
+green-careers.de
+
+#galabau #probearbeiten #grünejobs</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer hat seinen Job über ein Probearbeiten gefunden? Erzählt mal!</li><li>Betriebe lesen mit: Bietet ihr Probetage an? 👇</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p32">
+  <div class="bilder"><img src="2026-09-v3-quiz-beschaeftigte.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#32</span>
+      <span class="datum">Sa 26.09.2026 · 10:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Wie viele Menschen arbeiten im deutschen GaLaBau – A, B oder C?
+
+Es ist ein Rekordwert, und er ist höher als das, was die meisten schätzen. Auflösung ausnahmsweise schon morgen.
+
+#quiz #galabau #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Letzte Quiz-Runde im September – Auflösung schon morgen! 🧠</li><li>Kleiner Tipp: Es ist ein Rekordwert. 📈</li></ol></div>
+  </div>
+</article>
+<article class="karte" id="p33">
+  <div class="bilder"><img src="2026-09-w3-mo-insight-beschaeftigte.jpg" loading="lazy" alt="Slide 1"></div>
+  <div class="text">
+    <div class="kopf"><span class="nr">#33</span>
+      <span class="datum">So 27.09.2026 · 11:00 Uhr</span><span class="typ">Einzelbild</span></div>
+    <pre class="caption">Auflösung: B – 131.746 Menschen. Rekord.
+
+Damit ist der erste Monat mit einem Beitrag pro Tag durch. Was in dieser Zeit am meisten gelesen wurde, waren nicht die Sprüche, sondern die Zahlen: 15,6 Prozent der Anzeigen mit Gehalt, 20,91 Euro Tariflohn, 8.089 Azubis.
+
+Deshalb machen wir davon mehr. Wenn du eine Zahl kennst, die hier mal eingeordnet gehört – schreib sie drunter.
+
+Quelle: BGL-Branchenstatistik 2025
+green-careers.de
+
+#galabau #grünebranche #greencareers</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Danke für den ersten Monat! 🌿</li></ol></div>
+  </div>
+</article>
+  <h2>Stories <span class="zahl">16</span></h2>
+  <p class="hint">9:16, laufen 24 Stunden. Ohne Caption &ndash; der Text steht im Bild.</p>
+  <div class="storys">
+<figure class="story">
+  <img src="2026-09-story-w1-skt.jpg" loading="lazy" alt="Story 101">
+  <figcaption><b>#101</b>Do 27.08.2026 · 19:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-fakt-betriebe.jpg" loading="lazy" alt="Story 102">
+  <figcaption><b>#102</b>Fr 28.08.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-frage-feierabend.jpg" loading="lazy" alt="Story 103">
+  <figcaption><b>#103</b>Fr 28.08.2026 · 19:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-quiz-countdown.jpg" loading="lazy" alt="Story 104">
+  <figcaption><b>#104</b>Sa 29.08.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-frage-samstag.jpg" loading="lazy" alt="Story 105">
+  <figcaption><b>#105</b>Sa 29.08.2026 · 18:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-fakt-tariflohn.jpg" loading="lazy" alt="Story 106">
+  <figcaption><b>#106</b>So 30.08.2026 · 10:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-bts-montag.jpg" loading="lazy" alt="Story 107">
+  <figcaption><b>#107</b>So 30.08.2026 · 18:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-feature-gehalt.jpg" loading="lazy" alt="Story 108">
+  <figcaption><b>#108</b>Mo 31.08.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-frage-gehaltsangabe.jpg" loading="lazy" alt="Story 109">
+  <figcaption><b>#109</b>Mo 31.08.2026 · 19:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-fakt-netzwerk.jpg" loading="lazy" alt="Story 110">
+  <figcaption><b>#110</b>Di 01.09.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-anfahrt.jpg" loading="lazy" alt="Story 111">
+  <figcaption><b>#111</b>Di 01.09.2026 · 19:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-gefaelle.jpg" loading="lazy" alt="Story 112">
+  <figcaption><b>#112</b>Mi 02.09.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-feature-report.jpg" loading="lazy" alt="Story 113">
+  <figcaption><b>#113</b>Mi 02.09.2026 · 18:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-vorarbeiter.jpg" loading="lazy" alt="Story 114">
+  <figcaption><b>#114</b>Do 03.09.2026 · 08:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-frage-gewerke.jpg" loading="lazy" alt="Story 115">
+  <figcaption><b>#115</b>Do 03.09.2026 · 19:00 Uhr</figcaption>
+</figure>
+<figure class="story">
+  <img src="2026-09-story-w1-teaser-erfolg.jpg" loading="lazy" alt="Story 116">
+  <figcaption><b>#116</b>Di 08.09.2026 · 08:00 Uhr</figcaption>
+</figure></div>
+  <h2>Reels <span class="zahl">3</span></h2>
+  <div class="reels">
+<article class="karte reel" id="p201">
+  <video src="2026-09-reel1-fakten.mp4" controls preload="metadata" playsinline></video>
+  <div class="text">
+    <div class="kopf"><span class="nr">#201</span>
+      <span class="datum">Di 25.08.2026 · 17:00 Uhr</span><span class="typ">Reel</span></div>
+    <pre class="caption">Drei Zahlen über den GaLaBau, die kaum einer auf dem Schirm hat. 🌱
+
+Die zweite hat mit deinem Stundenlohn zu tun – und die dritte erklärt, warum dein Chef gerade schlechte Laune hat, wenn er die Auftragslage sieht.
+
+Welche hat dich überrascht?
+
+#galabau #landschaftsgärtner #grünebranche</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Wer wissen will, was wirklich drin ist: schreib GEHALT hier drunter. Check kommt per DM. 💸</li></ol></div>
+  </div>
+</article>
+<article class="karte reel" id="p203">
+  <video src="2026-09-reel3-baumpflege.mp4" controls preload="metadata" playsinline></video>
+  <div class="text">
+    <div class="kopf"><span class="nr">#203</span>
+      <span class="datum">Sa 29.08.2026 · 17:00 Uhr</span><span class="typ">Reel</span></div>
+    <pre class="caption">Baumpfleger ist kein Gärtner mit Leiter. 🌳
+
+SKT-A heißt: du kommst hoch. SKT-B heißt: du holst den Kollegen wieder runter, wenn oben etwas passiert. Deshalb klettert nie jemand allein.
+
+Dazu Totholz raus, Kronensicherung einbauen, Schnitt nach ZTV-Baumpflege – und unten steht einer an der Absperrung, der im Ernstfall hochgeht.
+
+Genau deshalb sind gute Baumpfleger so schwer zu finden: Die Kletterscheine kosten Zeit und Geld, und Höhenangst kann man nicht wegtrainieren.
+
+#baumpflege #seilklettertechnik #galabau</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>Baumpfleger hier? Sagt mal, wie lange ihr fuer den SKT-A gebraucht habt. 🌳</li></ol></div>
+  </div>
+</article>
+<article class="karte reel" id="p202">
+  <video src="2026-09-reel2-pov.mp4" controls preload="metadata" playsinline></video>
+  <div class="text">
+    <div class="kopf"><span class="nr">#202</span>
+      <span class="datum">Mo 31.08.2026 · 17:00 Uhr</span><span class="typ">Reel</span></div>
+    <pre class="caption">POV: dein erster Tag im GaLaBau. 🌱
+
+Sieben Uhr Treffen im Hof, Maschinen aufladen, raus zur Baustelle. Abends siehst du eine Fläche, die es morgens noch nicht gab.
+
+Drei Jahre Ausbildung, danach 19.898 Betriebe, die Leute suchen.
+
+#galabau #landschaftsgärtner #handwerk</pre><div class="komm"><b>Erst-Kommentare</b><ol><li>JOB hier drunter schreiben – Link kommt sofort per DM. 📬</li></ol></div>
+  </div>
+</article></div>
+</div>
+
 <script>
-const D={'s': 'tjdtJX+mpj0QJK59odqnYg==', 'i': '9+OTjQGmXXNO2Y5Z', 'c': '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'};
-const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
-async function dec(pw){
- const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
- const k=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.s),iterations:250000,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
- const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.i)},k,b(D.c));
- return new TextDecoder().decode(pt);}
-async function go(pw,remember){try{const h=await dec(pw);if(remember)localStorage.setItem("gcip",pw);
- document.open();document.write(h);document.close();}catch(e){localStorage.removeItem("gcip");
- document.getElementById("err").textContent="Falsches Passwort";}}
-const saved=localStorage.getItem("gcip");if(saved)go(saved,false);
-document.getElementById("f").addEventListener("submit",e=>{e.preventDefault();go(document.getElementById("pw").value.trim(),true);});
-</script></body></html>
+function pruefe(e) {
+  e.preventDefault();
+  if (document.getElementById('pw').value === "gruen26") {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('inhalt').style.display = '';
+    sessionStorage.setItem('ok', '1');
+  } else {
+    document.getElementById('pw').value = '';
+    document.getElementById('pw').placeholder = 'Falsch – nochmal';
+  }
+}
+if (sessionStorage.getItem('ok')) {
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('inhalt').style.display = '';
+}
+</script>
+</body></html>
