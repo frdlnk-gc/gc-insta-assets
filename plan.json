@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "posts": [
     {
       "nr": 2,
@@ -635,24 +635,6 @@
       "kommentare": [
         "Danke für den ersten Monat! 🌿"
       ]
-    },
-    {
-      "nr": 204,
-      "datum": "2026-09-28",
-      "zeit": "18:00",
-      "typ": "karussell",
-      "bilder": [
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/10/kachel-01.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/10/kachel-02.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/10/kachel-03.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/10/kachel-04.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/10/kachel-06.jpg"
-      ],
-      "caption": "Ab dem 7. Juni 2026 muss in Ihrer Stellenanzeige stehen, was der Job zahlt.\n\nDie EU-Entgelttransparenzrichtlinie verpflichtet Arbeitgeber, das Einstiegsgehalt oder die Gehaltsspanne vor dem Bewerbungsgespräch offenzulegen. Die Frage nach dem bisherigen Gehalt fällt weg. Heute nennen 12,5 Prozent der deutschen Stellenanzeigen ein Gehalt, in Großbritannien sind es 56 Prozent.\n\nFür GaLaBau-Betriebe ist das weniger Risiko als gedacht: Der Tarif gibt die Spanne ohnehin vor. Wer sie hinschreibt, filtert vorher statt im dritten Gespräch.\n\nWie halten Sie es aktuell? Schreiben Sie GEHALT in die Kommentare.\n\nQuellen: EU-Entgelttransparenzrichtlinie, Umsetzungsfrist 7. Juni 2026; Indeed Hiring Lab 2026\n\n#galabau #gartenundlandschaftsbau #mitarbeitergewinnung #handwerk #grünebranche",
-      "kommentare": [],
-      "quelle": "mia",
-      "entwurf": 10,
-      "thema": "Gehaltsangabe wird Pflicht"
     },
     {
       "nr": 117,
