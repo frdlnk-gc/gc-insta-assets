@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "posts": [
     {
       "nr": 2,
@@ -665,6 +665,20 @@
       "thema": "Ausbildungsvergütung GaLaBau 2026"
     },
     {
+      "nr": 134,
+      "datum": "2026-09-30",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/61/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 61,
+      "thema": "Story Teaser Zuschläge"
+    },
+    {
       "nr": 206,
       "datum": "2026-09-30",
       "zeit": "12:00",
@@ -705,6 +719,20 @@
       "quelle": "mia",
       "entwurf": 12,
       "thema": "Geschäftslage im GaLaBau"
+    },
+    {
+      "nr": 135,
+      "datum": "2026-10-02",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/62/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 62,
+      "thema": "Story Oktobermorgen"
     },
     {
       "nr": 208,
@@ -763,6 +791,34 @@
       "thema": "Sonntag im eigenen Garten"
     },
     {
+      "nr": 136,
+      "datum": "2026-10-04",
+      "zeit": "19:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/63/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 63,
+      "thema": "Story Sonntagabend Hecke"
+    },
+    {
+      "nr": 137,
+      "datum": "2026-10-05",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/64/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 64,
+      "thema": "Story Teaser Auflösung Baumschulen"
+    },
+    {
       "nr": 211,
       "datum": "2026-10-05",
       "zeit": "18:00",
@@ -807,6 +863,20 @@
       "quelle": "mia",
       "entwurf": 19,
       "thema": "Meister im GaLaBau"
+    },
+    {
+      "nr": 138,
+      "datum": "2026-10-07",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/66/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 66,
+      "thema": "Story Teaser Vakanzkosten"
     },
     {
       "nr": 213,
@@ -855,6 +925,20 @@
       "thema": "Pflanzfenster Herbst"
     },
     {
+      "nr": 139,
+      "datum": "2026-10-09",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/65/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 65,
+      "thema": "Story Teaser Wer wir sind"
+    },
+    {
       "nr": 215,
       "datum": "2026-10-09",
       "zeit": "18:00",
@@ -897,6 +981,20 @@
       "thema": "Story Frage Feierabend"
     },
     {
+      "nr": 140,
+      "datum": "2026-10-11",
+      "zeit": "11:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/67/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 67,
+      "thema": "Story Sonntagsfrage"
+    },
+    {
       "nr": 217,
       "datum": "2026-10-11",
       "zeit": "19:00",
@@ -909,6 +1007,20 @@
       "quelle": "mia",
       "entwurf": 26,
       "thema": "Montagsfrage"
+    },
+    {
+      "nr": 141,
+      "datum": "2026-10-12",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/68/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 68,
+      "thema": "Story Teaser Auflösung Kündigungsgründe"
     },
     {
       "nr": 218,
@@ -985,6 +1097,20 @@
       "thema": "Story Winter"
     },
     {
+      "nr": 142,
+      "datum": "2026-10-15",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/69/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 69,
+      "thema": "Story Fakt Förderprogramm Kommunen"
+    },
+    {
       "nr": 221,
       "datum": "2026-10-15",
       "zeit": "18:00",
@@ -1045,6 +1171,20 @@
       "thema": "Quiz Aufstiegs-BAföG"
     },
     {
+      "nr": 143,
+      "datum": "2026-10-17",
+      "zeit": "19:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/70/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 70,
+      "thema": "Story Quiz Erinnerung BAföG"
+    },
+    {
       "nr": 224,
       "datum": "2026-10-18",
       "zeit": "11:00",
@@ -1057,6 +1197,20 @@
       "quelle": "mia",
       "entwurf": 36,
       "thema": "Team Laub"
+    },
+    {
+      "nr": 144,
+      "datum": "2026-10-18",
+      "zeit": "19:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/71/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 71,
+      "thema": "Story Wochenstart"
     },
     {
       "nr": 126,
@@ -1085,6 +1239,20 @@
       "quelle": "mia",
       "entwurf": 38,
       "thema": "Auflösung Aufstiegs-BAföG"
+    },
+    {
+      "nr": 145,
+      "datum": "2026-10-20",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/72/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 72,
+      "thema": "Story Fakt Betriebsgröße"
     },
     {
       "nr": 226,
@@ -1165,6 +1333,20 @@
       "thema": "Story Baumpflege"
     },
     {
+      "nr": 146,
+      "datum": "2026-10-23",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/73/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 73,
+      "thema": "Story Freitag"
+    },
+    {
       "nr": 229,
       "datum": "2026-10-23",
       "zeit": "18:00",
@@ -1193,6 +1375,20 @@
       "thema": "Quiz Urlaubstage"
     },
     {
+      "nr": 147,
+      "datum": "2026-10-24",
+      "zeit": "19:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/74/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 74,
+      "thema": "Story Frage Urlaubstage"
+    },
+    {
       "nr": 231,
       "datum": "2026-10-25",
       "zeit": "11:00",
@@ -1219,6 +1415,20 @@
       "quelle": "mia",
       "entwurf": 47,
       "thema": "Story Zeitumstellung"
+    },
+    {
+      "nr": 148,
+      "datum": "2026-10-26",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/75/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 75,
+      "thema": "Story Teaser Auflösung Urlaub"
     },
     {
       "nr": 232,
@@ -1321,6 +1531,20 @@
       "quelle": "mia",
       "entwurf": 54,
       "thema": "Personalplanung fürs Frühjahr"
+    },
+    {
+      "nr": 149,
+      "datum": "2026-10-30",
+      "zeit": "08:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/76/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 76,
+      "thema": "Story Teaser guter Betrieb"
     },
     {
       "nr": 236,
