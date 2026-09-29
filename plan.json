@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "posts": [
     {
       "nr": 2,
@@ -785,6 +785,22 @@
       "quelle": "mia",
       "entwurf": 62,
       "thema": "Story Oktobermorgen"
+    },
+    {
+      "nr": 153,
+      "datum": "2026-10-02",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/156/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 156,
+      "thema": "Story Humor Regen",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "humor"
     },
     {
       "nr": 208,
