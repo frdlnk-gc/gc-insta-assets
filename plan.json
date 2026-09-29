@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "posts": [
     {
       "nr": 2,
@@ -885,6 +885,42 @@
       "quelle": "mia",
       "entwurf": 64,
       "thema": "Story Teaser Auflösung Baumschulen"
+    },
+    {
+      "nr": 154,
+      "datum": "2026-10-05",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/157/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 157,
+      "thema": "Story Mythos Arbeitszeugnis",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 1,
+      "teile": 2
+    },
+    {
+      "nr": 155,
+      "datum": "2026-10-05",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/157/kachel-02.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 157,
+      "thema": "Story Mythos Arbeitszeugnis",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 2,
+      "teile": 2
     },
     {
       "nr": 211,
