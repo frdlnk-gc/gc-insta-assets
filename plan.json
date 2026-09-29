@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "posts": [
     {
       "nr": 2,
@@ -1345,6 +1345,22 @@
       "quelle": "mia",
       "entwurf": 69,
       "thema": "Story Fakt Förderprogramm Kommunen"
+    },
+    {
+      "nr": 164,
+      "datum": "2026-10-15",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/170/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 170,
+      "thema": "Story Fachwort Mutterboden",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "begriff"
     },
     {
       "nr": 221,
