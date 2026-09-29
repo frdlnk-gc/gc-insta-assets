@@ -1,5 +1,5 @@
 {
-  "version": 27,
+  "version": 28,
   "posts": [
     {
       "nr": 2,
@@ -1861,6 +1861,22 @@
       "quelle": "mia",
       "entwurf": 49,
       "thema": "Story Stabilität"
+    },
+    {
+      "nr": 174,
+      "datum": "2026-10-27",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/183/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 183,
+      "thema": "Story Tipp Motorsäge",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "tipp"
     },
     {
       "nr": 233,
