@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "posts": [
     {
       "nr": 2,
@@ -1015,6 +1015,22 @@
       "quelle": "mia",
       "entwurf": 20,
       "thema": "Was eine offene Stelle kostet"
+    },
+    {
+      "nr": 157,
+      "datum": "2026-10-07",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/159/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 159,
+      "thema": "Story Steckbrief Feldahorn",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "steckbrief"
     },
     {
       "nr": 121,
