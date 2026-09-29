@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "posts": [
     {
       "nr": 2,
@@ -1797,6 +1797,42 @@
       "quelle": "mia",
       "entwurf": 75,
       "thema": "Story Teaser Auflösung Urlaub"
+    },
+    {
+      "nr": 172,
+      "datum": "2026-10-26",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/181/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 181,
+      "thema": "Story Fakt Pause",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 1,
+      "teile": 2
+    },
+    {
+      "nr": 173,
+      "datum": "2026-10-26",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/181/kachel-02.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 181,
+      "thema": "Story Fakt Pause",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 2,
+      "teile": 2
     },
     {
       "nr": 232,
