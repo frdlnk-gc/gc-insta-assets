@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "posts": [
     {
       "nr": 2,
@@ -1089,6 +1089,22 @@
       "quelle": "mia",
       "entwurf": 65,
       "thema": "Story Teaser Wer wir sind"
+    },
+    {
+      "nr": 159,
+      "datum": "2026-10-09",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/163/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 163,
+      "thema": "Story Humor Harke",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "humor"
     },
     {
       "nr": 215,
