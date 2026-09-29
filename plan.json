@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "posts": [
     {
       "nr": 2,
@@ -1301,6 +1301,22 @@
       "quelle": "mia",
       "entwurf": 30,
       "thema": "Dein Winter im GaLaBau"
+    },
+    {
+      "nr": 163,
+      "datum": "2026-10-14",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/168/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 168,
+      "thema": "Story Steckbrief Beruf Gärtner",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "steckbrief"
     },
     {
       "nr": 124,
