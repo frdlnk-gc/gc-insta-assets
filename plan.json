@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "posts": [
     {
       "nr": 2,
@@ -1189,6 +1189,42 @@
       "quelle": "mia",
       "entwurf": 68,
       "thema": "Story Teaser Auflösung Kündigungsgründe"
+    },
+    {
+      "nr": 160,
+      "datum": "2026-10-12",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/165/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 165,
+      "thema": "Story Mythos Resturlaub",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 1,
+      "teile": 2
+    },
+    {
+      "nr": 161,
+      "datum": "2026-10-12",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/165/kachel-02.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 165,
+      "thema": "Story Mythos Resturlaub",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 2,
+      "teile": 2
     },
     {
       "nr": 218,
