@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "posts": [
     {
       "nr": 2,
@@ -691,6 +691,42 @@
       "quelle": "mia",
       "entwurf": 9,
       "thema": "Zuschläge nach Tarif"
+    },
+    {
+      "nr": 150,
+      "datum": "2026-09-30",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/152/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 152,
+      "thema": "Story Mythos Laubbläser",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 1,
+      "teile": 2
+    },
+    {
+      "nr": 151,
+      "datum": "2026-09-30",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/152/kachel-02.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 152,
+      "thema": "Story Mythos Laubbläser",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "mythos",
+      "teil": 2,
+      "teile": 2
     },
     {
       "nr": 118,
