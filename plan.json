@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "posts": [
     {
       "nr": 2,
@@ -1697,6 +1697,22 @@
       "quelle": "mia",
       "entwurf": 73,
       "thema": "Story Freitag"
+    },
+    {
+      "nr": 171,
+      "datum": "2026-10-23",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/179/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 179,
+      "thema": "Story Humor Urlaub",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "humor"
     },
     {
       "nr": 229,
