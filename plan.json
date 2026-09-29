@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 25,
   "posts": [
     {
       "nr": 2,
@@ -1635,6 +1635,22 @@
       "thema": "Story Steckbrief Hainbuche",
       "zielgruppe": "fachkraefte",
       "vorlage": "steckbrief"
+    },
+    {
+      "nr": 170,
+      "datum": "2026-10-22",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/178/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 178,
+      "thema": "Story Fachwort Fertigstellungspflege",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "begriff"
     },
     {
       "nr": 228,
