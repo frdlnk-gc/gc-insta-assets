@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "posts": [
     {
       "nr": 2,
@@ -1045,6 +1045,22 @@
       "quelle": "mia",
       "entwurf": 21,
       "thema": "Story Pflanzzeit"
+    },
+    {
+      "nr": 158,
+      "datum": "2026-10-08",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/162/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 162,
+      "thema": "Story Fachwort Kronentraufe",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "begriff"
     },
     {
       "nr": 214,
