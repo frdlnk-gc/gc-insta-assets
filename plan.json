@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "posts": [
     {
       "nr": 2,
@@ -1619,6 +1619,22 @@
       "quelle": "mia",
       "entwurf": 41,
       "thema": "Warum keine Bewerbungen kommen"
+    },
+    {
+      "nr": 169,
+      "datum": "2026-10-21",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/189/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 189,
+      "thema": "Story Steckbrief Hainbuche",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "steckbrief"
     },
     {
       "nr": 228,
