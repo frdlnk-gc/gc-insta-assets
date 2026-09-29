@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "posts": [
     {
       "nr": 2,
@@ -741,6 +741,22 @@
       "quelle": "mia",
       "entwurf": 11,
       "thema": "Story Fakt Geschäftslage"
+    },
+    {
+      "nr": 152,
+      "datum": "2026-10-01",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/154/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 154,
+      "thema": "Story Tipp Heckenschnitt ab Oktober",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "tipp"
     },
     {
       "nr": 207,
