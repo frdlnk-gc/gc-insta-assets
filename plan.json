@@ -1,5 +1,5 @@
 {
-  "version": 28,
+  "version": 29,
   "posts": [
     {
       "nr": 2,
@@ -1923,6 +1923,22 @@
       "quelle": "mia",
       "entwurf": 52,
       "thema": "So läuft ein Wechsel ab"
+    },
+    {
+      "nr": 175,
+      "datum": "2026-10-28",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/184/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 184,
+      "thema": "Story Steckbrief Felsenbirne",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "steckbrief"
     },
     {
       "nr": 132,
