@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "posts": [
     {
       "nr": 2,
@@ -1389,6 +1389,22 @@
       "quelle": "mia",
       "entwurf": 33,
       "thema": "Story Sicherheit"
+    },
+    {
+      "nr": 165,
+      "datum": "2026-10-16",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/171/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 171,
+      "thema": "Story Humor Freitag",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "humor"
     },
     {
       "nr": 222,
