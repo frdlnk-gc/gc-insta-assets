@@ -1,5 +1,5 @@
 {
-  "version": 22,
+  "version": 23,
   "posts": [
     {
       "nr": 2,
@@ -1557,6 +1557,22 @@
       "quelle": "mia",
       "entwurf": 72,
       "thema": "Story Fakt Betriebsgröße"
+    },
+    {
+      "nr": 168,
+      "datum": "2026-10-20",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/175/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 175,
+      "thema": "Story Tipp Bäume sichern",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "tipp"
     },
     {
       "nr": 226,
