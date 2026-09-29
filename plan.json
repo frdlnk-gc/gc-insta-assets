@@ -1,5 +1,5 @@
 {
-  "version": 30,
+  "version": 31,
   "posts": [
     {
       "nr": 2,
@@ -1997,6 +1997,22 @@
       "quelle": "mia",
       "entwurf": 76,
       "thema": "Story Teaser guter Betrieb"
+    },
+    {
+      "nr": 177,
+      "datum": "2026-10-30",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/187/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 187,
+      "thema": "Story Humor Thermoskanne",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "humor"
     },
     {
       "nr": 236,
