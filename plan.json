@@ -1,5 +1,5 @@
 {
-  "version": 29,
+  "version": 30,
   "posts": [
     {
       "nr": 2,
@@ -1953,6 +1953,22 @@
       "quelle": "mia",
       "entwurf": 53,
       "thema": "Story Frühjahr"
+    },
+    {
+      "nr": 176,
+      "datum": "2026-10-29",
+      "zeit": "12:00",
+      "typ": "story",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/186/kachel-01.jpg"
+      ],
+      "caption": "",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 186,
+      "thema": "Story Fachwort Stammumfang",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "begriff"
     },
     {
       "nr": 235,
