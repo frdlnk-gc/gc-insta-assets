@@ -1,5 +1,5 @@
 {
-  "version": 31,
+  "version": 32,
   "posts": [
     {
       "nr": 2,
@@ -1601,24 +1601,6 @@
       "quelle": "mia",
       "entwurf": 40,
       "thema": "Story Anzeigen"
-    },
-    {
-      "nr": 227,
-      "datum": "2026-10-21",
-      "zeit": "12:00",
-      "typ": "karussell",
-      "bilder": [
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/41/kachel-01.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/41/kachel-02.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/41/kachel-03.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/41/kachel-04.jpg",
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/41/kachel-07.jpg"
-      ],
-      "caption": "Ihre Stellenanzeige läuft seit zwölf Wochen und es kommt nichts.\n\nMeistens liegt es an einem von drei Punkten: kein Gehalt in der Anzeige, ein Text für drei verschiedene Rollen gleichzeitig, oder eine Bewerbung, die nach Feierabend auf dem Handy nicht in zwei Minuten zu schaffen ist.\n\nNur 12,5 Prozent der deutschen Anzeigen nennen eine Gehaltszahl. Ab Juni 2026 wird sie ohnehin Pflicht. Und eine unbesetzte Stelle im Handwerk kostet im Schnitt 32.600 Euro.\n\nSchreiben Sie ANZEIGE in die Kommentare, wir schauen drauf.\n\nQuellen: Indeed Hiring Lab 2026; Stepstone Vakanzkosten-Studie 2025\n\n#galabau #gartenundlandschaftsbau #mitarbeitergewinnung #handwerk #grünebranche",
-      "kommentare": [],
-      "quelle": "mia",
-      "entwurf": 41,
-      "thema": "Warum keine Bewerbungen kommen"
     },
     {
       "nr": 169,
