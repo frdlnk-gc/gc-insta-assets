@@ -1,5 +1,5 @@
 {
-  "version": 32,
+  "version": 33,
   "posts": [
     {
       "nr": 2,
@@ -1587,20 +1587,6 @@
       "quelle": "mia",
       "entwurf": 39,
       "thema": "Betriebsgröße im GaLaBau"
-    },
-    {
-      "nr": 127,
-      "datum": "2026-10-21",
-      "zeit": "08:00",
-      "typ": "story",
-      "bilder": [
-        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/40/kachel-01.jpg"
-      ],
-      "caption": "",
-      "kommentare": [],
-      "quelle": "mia",
-      "entwurf": 40,
-      "thema": "Story Anzeigen"
     },
     {
       "nr": 169,
