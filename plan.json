@@ -1,5 +1,5 @@
 {
-  "version": 33,
+  "version": 34,
   "posts": [
     {
       "nr": 2,
@@ -1875,6 +1875,46 @@
       "thema": "Story Wechsel"
     },
     {
+      "nr": 238,
+      "datum": "2026-10-28",
+      "zeit": "10:00",
+      "typ": "karussell",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/315/kachel-01.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/315/kachel-02.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/315/kachel-03.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/315/kachel-04.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/315/kachel-05.jpg"
+      ],
+      "caption": "Hallo, wir sind GreenCareers. 👋\n\nDas Karrierenetzwerk für die grüne Branche: Wir bringen Fachkräfte und Betriebe aus GaLaBau, Baumschule, Baumpflege, Gärtnerei, Pflanzenhandel und Landwirtschaft zusammen.\n\nFür Fachkräfte: dein neuer Job, kostenlos und ohne Lebenslauf.\nFür Betriebe: passende Mitarbeiter, mit Betriebsprofil, Fotos und Videos.\n\n30.000+ Fachkräfte und 600+ Arbeitgeber aus der grünen Branche. Job gesucht? Link in Bio.\n\n#gruenebranche #galabau #greencareers",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 315,
+      "thema": "Pin 1: Wer wir sind",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "foto"
+    },
+    {
+      "nr": 239,
+      "datum": "2026-10-28",
+      "zeit": "11:00",
+      "typ": "karussell",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/316/kachel-01.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/316/kachel-02.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/316/kachel-03.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/316/kachel-04.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/316/kachel-05.jpg"
+      ],
+      "caption": "Neuer Job? Bewirb dich vom Handy. In 60 Sekunden.\n\n1. Link in Bio tippen.\n2. 4 kurze Fragen beantworten. Kein Lebenslauf, kein Anschreiben.\n3. Die besten Betriebe aus deiner Region melden sich bei dir.\n\nKostenlos und 100 % diskret: Dein aktueller Arbeitgeber erfährt nichts.\n\n👉 Link in Bio: job-angebot.green-careers.de\n\n#gruenejobs #galabau #jobwechsel",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 316,
+      "thema": "Pin 2: Für Bewerber",
+      "zielgruppe": "fachkraefte",
+      "vorlage": "foto"
+    },
+    {
       "nr": 234,
       "datum": "2026-10-28",
       "zeit": "12:00",
@@ -1907,6 +1947,26 @@
       "thema": "Story Steckbrief Felsenbirne",
       "zielgruppe": "fachkraefte",
       "vorlage": "steckbrief"
+    },
+    {
+      "nr": 240,
+      "datum": "2026-10-28",
+      "zeit": "17:00",
+      "typ": "karussell",
+      "bilder": [
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/317/kachel-01.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/317/kachel-02.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/317/kachel-03.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/317/kachel-04.jpg",
+        "https://frnigthahodfbpsgnhoo.supabase.co/storage/v1/object/public/mia-dateien/instagram/317/kachel-05.jpg"
+      ],
+      "caption": "Wie finde ich einfach gute Mitarbeiter? So geht's mit GreenCareers.\n\n1. Stelle veröffentlichen: im Netzwerk mit 30.000+ Fachkräften der grünen Branche.\n2. Nur passende Bewerbungen: vorsortiert durch unseren KI-Filter.\n3. Kennenlernen und einstellen.\n\nStelle offen? So stellen Sie passende Mitarbeiter in unter 45 Tagen ein. Kostenloses Beratungsgespräch: green-careers.de/arbeitgeber\n\n#galabau #mitarbeitergesucht #greencareers",
+      "kommentare": [],
+      "quelle": "mia",
+      "entwurf": 317,
+      "thema": "Pin 3: Für Arbeitgeber",
+      "zielgruppe": "betriebe",
+      "vorlage": "foto"
     },
     {
       "nr": 132,
